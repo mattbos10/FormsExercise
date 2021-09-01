@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forms">
+    <title>Form Exercise</title>
+</head>
+<body>
+    <form>
+        <div>
+            <fieldset>
+                <legend>Customer Experience Survey</legend>
+                <br>
+                <div>
+                    <label for="storeNumber">Store Number</label>
+                    <select>
+                        <option value="selectAstore">Select A Store</option>
+                        <option value="3109">3109</option>
+                        <option value="2421">2421</option>
+                        <option value="5357">5357</option>
+                        </option>
+                    </select>
+
+                </div>
+                <!-- CHECK ON HOW THE TIME STAMP WORKS HERE (keeping for reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)-->
+                <fieldset>
+                    <legend>When you visited</legend>
+                    <div>
+                        <label for="date">Date Visited</label>
+                        <input type="date" name="party" min="2021-01-01" max="2021-12-31">
+                    </div>
+                    <div>
+                        <label for="time">Time</label>
+                        <input type="time" name="timeOfvisit" id="timeOfvisit">
+                    </div>
+                </fieldset>
+                <br>
+                <div>
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <div>
+                            <input type="radio" id="Female" name="Gender" value="Female" checked>
+                            <label for="Female">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="Male" name="Gender" value="Male">
+                            <label for="male">Male</label>
+                        </div>
+                        <input type="radio" id="Non-binary" name="Gender" value="Non-Binary">
+                        <label for="Non-Binary">Non-Binary</label>
+                        <div>
+                            <input type="radio" id="preferNotto Answer" name="Prefer Not to Answer"
+                                value="preferNottoAnswer">
+                            <label for="preferNottoAnswer">Prefer Not to Answer</label>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <div>
+                        <label for="customerExperience">Tell us about your experience:</label>
+                        <div>
+                            <textarea name="customerExperience" id="customerExperience" cols=20,
+                                rows=2> Once upon a time...</textarea>
+                        </div>
+                        <br>
+                        <!-- Not sure this works for accessibility, but here's where I picked up this idea:https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674-->
+                        <div>
+                            <input type="number" min="1" max="30" step="1" id="Times per month"
+                                oninput="(validity.valid)||(value='');">
+                            <label for="Times per month">Times visited in the last month</label>
+                        </div>
+                        <!-- Hoping to achieve this: https://www.the-art-of-web.com/html/html5-checkbox-required/#example1 -->
+
+                    </div>
+                    <form ... onsubmit="return checkForm(this);">
+                        <p><input type="checkbox" required name="terms"> Please check this box if you are willing to be
+                            contacted about your experience.</u></p>
+                        <div>
+                            <label for="pass">Password:</label>
+                            <input type="password" id="pass" name="password" minlength="5" maxlength="10" required>
+
+                            <div id="message">
+                            </div>
+                        </div>
+                        <p><input type="reset">
+                            <input type="submit">
+                        </p>
+                        <!-- Password inspiration:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password...Didn't see how to change the pop-up text -->
+
+                    </form>
+</body>
+</html>
